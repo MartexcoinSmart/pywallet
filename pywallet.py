@@ -10,7 +10,7 @@ never_update=False
 #
 
 #
-# Ex: python2.7 pywallet.py --dumpwallet --datadir=/tmp > ~/tmp/wallet_dump.txt
+# Ex: python2.7 pywallet.py --dumpwallet --datadir=/tmp | grep addr | sort | uniq | awk -F'"' '{print $4}' > ~/tmp/wallet_dump.txt
 #
 
 
