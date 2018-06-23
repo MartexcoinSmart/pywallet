@@ -20,12 +20,15 @@ import sys
 
 coin_addr_fn = sys.argv[1]
 coin_addr_fp = open(coin_addr_fn)
+total_balance = 0.0
 for coin_addr in coin_addr_fp:
     url = "https://blockchain.info/address/{0}".format(coin_addr)
     page = requests.get(url)
     tree = html.fromstring(page.content)
     td = tree.xpath('//td[@id="final_balance"]')
     balance = td[0][0][0].text
-    print("{0}: {1}".format(coin_addr.rstrip(),balance))
+    fbalance = float(balance.split(" ")[0])
+    total_balance += fbalance
+    print("{0}:\t{1} = {2}".format(coin_addr.rstrip(),balance,total_balance))
 
 coin_addr_fp.close()
