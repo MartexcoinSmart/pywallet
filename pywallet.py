@@ -9,9 +9,7 @@ never_update=False
 # forked from Joric's pywallet.py
 #
 
-#
-# Ex: python2.7 pywallet.py --dumpwallet --datadir=/tmp | grep addr | sort | uniq | awk -F'"' '{print $4}' > ~/tmp/wallet_dump.txt
-#
+
 
 
 beta_version =  ('a' in pywversion.split('-')[0]) or ('b' in pywversion.split('-')[0])
